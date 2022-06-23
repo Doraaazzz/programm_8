@@ -1,0 +1,1 @@
+ssh -p 2222 -L 1337:pg:5432 s336462@helios.se.ifmo.ru

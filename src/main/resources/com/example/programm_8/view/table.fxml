@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programm_8.Controllers.TableController">
+   <children>
+      <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="1984.0">
+         <children>
+            <Button layoutX="4.0" layoutY="1.0" mnemonicParsing="false" onAction="#back" text="BACK" />
+            <Button layoutX="1.0" layoutY="36.0" mnemonicParsing="false" onAction="#getterTable" prefHeight="26.0" prefWidth="56.0" text="UPDATE">
+               <font>
+                  <Font size="11.0" />
+               </font></Button>
+         </children></Pane>
+      <TableView fx:id="table" layoutX="58.0" prefHeight="400.0" prefWidth="543.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="167.0" text="ID" />
+            <TableColumn fx:id="name" prefWidth="163.0" text="Movie's name" />
+            <TableColumn fx:id="creationDate" prefWidth="177.0" text="creation date" />
+            <TableColumn fx:id="oscarsCount" prefWidth="117.0" text="oscars" />
+            <TableColumn fx:id="goldenPalmCount" prefWidth="117.0" text="oscars" />
+            <TableColumn fx:id="genre" prefWidth="96.0" text="genre" />
+            <TableColumn fx:id="mpaaRating" prefWidth="89.0" text="mpaaRating" />
+            <TableColumn fx:id="coordinate_x" prefWidth="87.0" text="c_x" />
+            <TableColumn fx:id="coordinate_y" prefWidth="95.0" text="c_y" />
+            <TableColumn fx:id="operator_name" prefWidth="117.0" text="operator" />
+            <TableColumn fx:id="height" prefWidth="90.0" text="height" />
+            <TableColumn fx:id="eyeColor" prefWidth="99.0" text="eye" />
+            <TableColumn fx:id="hairColor" prefWidth="111.0" text="hair" />
+            <TableColumn fx:id="user" prefWidth="47.0" text="user" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

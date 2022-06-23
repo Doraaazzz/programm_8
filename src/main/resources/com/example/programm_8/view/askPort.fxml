@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="parent" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="background" stylesheets="@../../../../LightMode.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.programm_8.Controllers.ConnectController">
+   <children>
+      <AnchorPane layoutX="19.0" layoutY="14.0" prefHeight="368.0" prefWidth="0.0">
+         <children>
+            <Label fx:id="labelMode" layoutX="250.0" layoutY="110.0" prefHeight="48.0" prefWidth="70.0" text="Enter port:" textAlignment="CENTER">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <Button layoutX="254.0" layoutY="239.0" mnemonicParsing="false" onAction="#connect" styleClass="user-button" text="connect">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+            <TextField fx:id="port" layoutX="210.0" layoutY="158.0" styleClass="secondary-elements" />
+            <Button layoutX="529.0" layoutY="-3.0" mnemonicParsing="false" onAction="#changeMode" prefHeight="33.0" prefWidth="33.0" styleClass="switch">
+               <graphic>
+                  <ImageView fx:id="imgMode" fitHeight="25.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../../LightMode.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ImageView fx:id="connectImg" fitHeight="25.0" fitWidth="20.0" layoutX="183.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../../portLight.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
