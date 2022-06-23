@@ -1,5 +1,6 @@
 package com.example.programm_8.Controllers;
 
+import com.example.programm_8.App;
 import com.example.programm_8.Utility.Data;
 import com.example.programm_8.Utility.TableRows;
 import com.example.programm_8.exceptions.ArgumentException;
@@ -58,7 +59,7 @@ public class SuccessController {
         }
         FileInputStream fis = null;
         try {
-            fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/com/example/programm_8/images/meow.png");
+            fis = new FileInputStream(System.getProperty("user.dir") + "/src/main/resources/com/example/programm_8/images/corgi.png");
         } catch (FileNotFoundException e) {
             throw new RuntimeException(e);
         }
@@ -74,7 +75,7 @@ public class SuccessController {
         for (int i = 0; i < users.size(); i++) {
             colors.add(Color.rgb(randomRGB(), randomRGB(), randomRGB()));
         }
-        Image meow = new Image(fis, 150, 100, true, true);
+        Image corgi = new Image(fis, 150, 100, true, true);
 
 
         data.forEach(tableRows -> {
@@ -82,8 +83,8 @@ public class SuccessController {
             Canvas canvas = new Canvas(150.00f, 100.00f);
             GraphicsContext graphics_context =
                     canvas.getGraphicsContext2D();
-            double coordinate_x = Double.parseDouble(tableRows.getS6());
-            double coordinate_y = Double.parseDouble(tableRows.getS7());
+            double coordinate_x = Long.parseLong(tableRows.getS7());
+            double coordinate_y = Double.parseDouble(tableRows.getS8());
             Color color = colors.get(users.indexOf(tableRows.getS13()));
 
 
@@ -93,28 +94,24 @@ public class SuccessController {
             // set fill for rectangle
             graphics_context.setFill(color);
             graphics_context.fillRect(10, 10, 130, 80);
-            graphics_context.drawImage(meow, 10, 0);
+            graphics_context.drawImage(corgi, 10, 0);
             Tooltip tip = new Tooltip();
             tip.setText(
                     "id: " + tableRows.getS0() + "\n" +
                             "movie name: " + tableRows.getS1() + "\n" +
                             "creation date: " + tableRows.getS2() + "\n" +
                             "oscars count: " + tableRows.getS3() + "\n" +
-                            "genre: " + tableRows.getS4() + "\n" +
-                            "rating: " + tableRows.getS5() + "\n" +
-                            "coordinate x: " + tableRows.getS6() + "\n" +
-                            "coordinate y: " + tableRows.getS7() + "\n" +
-                            "director:\n" +
-                            "name: " + tableRows.getS8() + "\n" +
-                            "height: " + tableRows.getS9() + "\n" +
-                            "eye color: " + tableRows.getS10() + "\n" +
-                            "hair color: " + tableRows.getS11() + "\n" +
-                            "nationality: " + tableRows.getS12() + "\n" +
-                            "loc_x: " + tableRows.getS13() + "\n" +
-                            "loc_y: " + tableRows.getS14() + "\n" +
-                            "loc_z: " + tableRows.getS15() + "\n" +
-                            "loc_name: " + tableRows.getS16() + "\n" + "\n" +
-                            "movie owner: " + tableRows.getS17());
+                            "golden palm count: " + tableRows.getS4() + "\n" +
+                            "genre: " + tableRows.getS5() + "\n" +
+                            "rating: " + tableRows.getS6() + "\n" +
+                            "coordinate x: " + tableRows.getS7() + "\n" +
+                            "coordinate y: " + tableRows.getS8() + "\n" +
+                            "operator:\n" +
+                            "name: " + tableRows.getS9() + "\n" +
+                            "height: " + tableRows.getS10() + "\n" +
+                            "eye color: " + tableRows.getS11() + "\n" +
+                            "hair color: " + tableRows.getS12() + "\n" +
+                            "movie owner: " + tableRows.getS13());
             Button baton = new Button();
             baton.setGraphic(canvas);
             baton.setLayoutX(coordinate_x);
@@ -123,7 +120,7 @@ public class SuccessController {
             EventHandler<ActionEvent> update = new EventHandler<ActionEvent>() {
                 @Override
                 public void handle(ActionEvent actionEvent) {
-                    if (tableRows.getS17().equals(Data.user.getUsername())) {
+                    if (tableRows.getS13().equals(Data.user.getUsername())) {
                         Data.updatableObject = tableRows;
                         try {
                             Data.updaterScene = new Scene(new FXMLLoader(App.class.getResource("view/updater.fxml")).load(), 300, 200);
@@ -166,7 +163,7 @@ public class SuccessController {
     private LinkedList<TableRows> readCollectionData() throws ArgumentException {
         String data = Data.commandManager.managerWork("getTable");
         LinkedList<TableRows> rows = new LinkedList<>();
-        String[] strs = new String[18];
+        String[] strs = new String[14];
         Scanner scanner = new Scanner(data);
         scanner.useDelimiter(System.getProperty("line.separator"));
         boolean over = false;
@@ -186,10 +183,7 @@ public class SuccessController {
                 strs[11] = scanner.next();
                 strs[12] = scanner.next();
                 strs[13] = scanner.next();
-                strs[14] = scanner.next();
-                strs[15] = scanner.next();
-                strs[16] = scanner.next();
-                strs[17] = scanner.next();
+
                 rows.add(new TableRows(strs));
             } catch (Exception ing) {
                 over = true;

@@ -39,10 +39,9 @@ public class App extends Application {
         Data.tableScene = new Scene(fxmlLoader.load(), 600, 400);
         fxmlLoader = new FXMLLoader(getClass().getResource("view/asker.fxml"));
         Data.askerScene = new Scene(fxmlLoader.load(), 600, 400);
-      //  fxmlLoader = new FXMLLoader(getClass().getResource("view/accessexc.fxml"));
-       // Data.accessScene = new Scene(fxmlLoader.load(), 300, 200);
-//        fxmlLoader = new FXMLLoader(getClass().getResource("view/updater.fxml"));
-//        Data.updaterScene = new Scene(fxmlLoader.load(), 600, 400);
+        fxmlLoader = new FXMLLoader(getClass().getResource("view/accesserror.fxml"));
+        Data.accessScene = new Scene(fxmlLoader.load(), 300, 200);
+//
 
     }
 

@@ -29,6 +29,7 @@
             <Label layoutX="33.0" layoutY="98.0" text="Результат команды:" />
             <Button layoutX="490.0" layoutY="315.0" mnemonicParsing="false" onAction="#openTable" text="Таблица" />
             <Button layoutX="384.0" layoutY="61.0" mnemonicParsing="false" onAction="#openAsker" prefHeight="26.0" prefWidth="159.0" text="Создать объект Movie" />
+            <Button layoutX="496.0" layoutY="238.0" mnemonicParsing="false" onAction="#canvas" text="pictures" />
          </children></Pane>
    </children>
 </AnchorPane>
